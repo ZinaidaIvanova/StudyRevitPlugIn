@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+    <RevitAddIns>
+      <AddIn Type="Application">
+        <Assembly>C:\StudyRevitPlugIn\MyRevitPlugin\bin\Debug\MyRevitPlugin.dll</Assembly>
+	<Name>MyRevitPlugin</Name>
+        <AddInId>7203b640-7543-461f-8e04-d0851283b673</AddInId>
+        <FullClassName>MyRevitPlugin.RevitPlugin</FullClassName>
+        <VendorId>NAME</VendorId>
+        <VendorDescription>Your Company Information</VendorDescription>
+      </AddIn>
+    </RevitAddIns>

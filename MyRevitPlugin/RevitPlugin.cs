@@ -9,7 +9,7 @@ using Autodesk.Revit;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-
+using System.Windows.Media.Imaging;
 
 namespace MyRevitPlugin
 {
@@ -33,8 +33,9 @@ namespace MyRevitPlugin
 
         private void AddRibbonPanel(UIControlledApplication application)
         {
+            application.CreateRibbonTab(TabName);
             string thisAssemblyPath = Assembly.GetExecutingAssembly().Location;
-            RibbonPanel ribbonPanel = application.CreateRibbonPanel("NewRibbonPanel");
+            //RibbonPanel ribbonPanel = application.CreateRibbonPanel("NewRibbonPanel");
             RibbonPanel viewPanel = application.CreateRibbonPanel(TabName, RibbonName);
 
             var helloWorldName = typeof(HelloWorld).FullName;
@@ -48,8 +49,9 @@ namespace MyRevitPlugin
             {
                 //Image = showImg,
                 ToolTip = "Say hello to the entire world.",
-               // LargeImage = showImg
+                // LargeImage = showImg
             };
+            viewPanel.AddItem(helloWorldButton);
 
             var ViewPanelButton = new PushButtonData(
                 "ViewPanel",
@@ -57,11 +59,11 @@ namespace MyRevitPlugin
                 thisAssemblyPath,
                 ViewPanelName)
             {
-               // Image = hideImg,
+                // Image = hideImg,
                 ToolTip = "Показать дерево",
                 //LargeImage = hideImg
             };
-            // var
+            viewPanel.AddItem(ViewPanelButton);
         }
     }
 
